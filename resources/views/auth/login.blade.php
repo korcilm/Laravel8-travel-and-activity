@@ -8,7 +8,6 @@
     </div>
     <!-- preloader area end -->
 
-    <x-jet-validation-errors class="mb-4" />
 
     @if (session('status'))
         <div class="mb-4 font-medium text-sm text-green-600">
@@ -19,6 +18,7 @@
     <div class="login-area login-bg" >
         <div class="container">
             <div class="login-box ptb--100">
+                <x-jet-validation-errors class="mb-4" />
                 <form method="POST" action="{{ route('login') }}">
                     @csrf
                     <div class="login-form-head">
