@@ -19,7 +19,7 @@
         <div class="container">
             <div class="login-box ptb--100">
                 <x-jet-validation-errors class="mb-4" />
-                <form method="POST" action="{{ route('login') }}">
+                <form method="POST" action="{{ route('admin_logincheck') }}">
                     @csrf
                     <div class="login-form-head">
                         <h4>Admin Paneli</h4>
@@ -27,12 +27,12 @@
                     </div>
                     <div class="login-form-body">
                         <div class="form-gp">
-                            <label for="email" value="{{ __('Email') }}">E-Posta</label>
+                            <label for="email" >E-Posta</label>
                             <input id="email"  type="email" name="email" :value="old('email')" required autofocus >
                             <i class="ti-email"></i>
                         </div>
                         <div class="form-gp">
-                            <label for="password" value="{{ __('Password') }}">Parola</label>
+                            <label for="password" >Parola</label>
                             <input id="password"  type="password" name="password" required autocomplete="current-password">
                             <i class="ti-lock"></i>
                         </div>
