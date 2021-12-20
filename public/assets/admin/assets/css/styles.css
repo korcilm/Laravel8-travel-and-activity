@@ -1694,8 +1694,8 @@ table.dbkit-table tr td {
 }
 
 .gradiant-bg .card-header a {
-    background-image: -webkit-linear-gradient(top left, #8914fe, #8160f6);
-    background-image: linear-gradient(to bottom right, #8914fe, #8160f6);
+    background-image: -webkit-linear-gradient(top left, #43dfc2, #90d2eb);
+    background-image: linear-gradient(to bottom right, #43dfc2, #90d2eb);
     color: #fff;
 }
 

@@ -5,4 +5,5 @@ Türkiye'nin en iyi aktivite sitesi
 @endsection
 @section('keywords','Kocaeli, Gezi, Aktivite,İstanbul')
 @section('content')
+   @include('admin._content')
 @endsection

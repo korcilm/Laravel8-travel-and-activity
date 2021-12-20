@@ -27,8 +27,11 @@
 <body>
 <div class="page-container">
     @include('admin._sidebar')
+    <div class="main-content">
     @include('admin._header')
-    @section('_content')@endsection
+    @yield('content')
+
+    </div>
     @include('admin._footer')
 </div>
 
