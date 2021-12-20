@@ -1,4 +1,4 @@
-<div class="main-content">
+
     <!-- header area start -->
     <div class="header-area">
         <div class="row align-items-center">
@@ -192,6 +192,6 @@
         </div>
     </div>
     <!-- page title area end -->
-</div>
+
 
 
