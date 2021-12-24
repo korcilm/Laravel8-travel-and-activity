@@ -9,7 +9,8 @@
         <div class="menu-inner">
             <nav>
                 <ul class="metismenu" id="menu">
-                    <li><a href="{{route('admin_category')}}"><i class="ti-map-alt"></i> <span>Kategori</span></a></li>
+                    <li><a href="{{route('admin_category')}}"><i class="ti-map-alt"></i> <span>Category</span></a></li>
+                    <li><a href="{{route('admin_content')}}"><i class="ti-map-alt"></i> <span>Content</span></a></li>
                     <li><a href="invoice.html"><i class="ti-receipt"></i> <span>Invoice Summary</span></a></li>
                 </ul>
             </nav>

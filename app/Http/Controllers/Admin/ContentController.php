@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Content;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ContentController extends Controller
 {
@@ -16,6 +17,8 @@ class ContentController extends Controller
     public function index()
     {
         //
+        $dataList=DB::select('select * from contents');
+        return view('admin.content',['datalist'=>$dataList]);
     }
 
     /**
