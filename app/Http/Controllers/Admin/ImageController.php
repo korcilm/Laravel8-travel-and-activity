@@ -6,6 +6,9 @@ use App\Http\Controllers\Controller;
 use App\Models\Content;
 use App\Models\Image;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class ImageController extends Controller
 {
@@ -24,11 +27,12 @@ class ImageController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function add($id)
+    public function add($content_id)
     {
         //
-        $data=Content::find($id);
-        return view('admin_image_add',['data'=>$data]);
+        $data=Content::find($content_id);
+        $images=DB::table('images')->where('content_id','=',$content_id)->get();
+        return view('admin.image_add',['data'=>$data,'images'=>$images]);
     }
 
     /**
@@ -37,9 +41,14 @@ class ImageController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create(Request $request,$content_id)
     {
-        //
+        DB::table('images')->insert([
+            'title'=>$request->input('title'),
+            'image'=>Storage::putFile('images',$request->file('image')),
+            'content_id'=>$content_id,
+        ]);
+        return redirect()->route('admin_image_add',['content_id'=>$content_id]);
     }
 
     /**
@@ -82,8 +91,10 @@ class ImageController extends Controller
      * @param  \App\Models\Image  $image
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Image $image)
+    public function destroy(Image $image,$id,$content_id)
     {
         //
+        DB::table('images')->where('id','=',$id)->delete();
+        return redirect()->route('admin_image_add',['content_id'=>$content_id]);
     }
 }
