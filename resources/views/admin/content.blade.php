@@ -1,9 +1,13 @@
+<?php
+use Illuminate\Support\Facades\Storage;
+?>
 @extends('layouts.admin')
 @section('title','Content List')
 @section('description')
     Türkiye'nin en iyi aktivite sitesi
 @endsection
 @section('content')
+
     <div class="main-content-inner">
         <div class="row">
 
@@ -28,11 +32,14 @@
                                                         <thead class="text-uppercase">
                                                         <tr>
                                                             <th scope="col">ID</th>
-                                                            <th scope="col">Parent</th>
+                                                            <th scope="col">Type</th>
                                                             <th scope="col">Title</th>
                                                             <th scope="col">Keywords</th>
                                                             <th scope="col">Description</th>
                                                             <th scope="col">Image</th>
+                                                            <th scope="col">Detail</th>
+                                                            <th scope="col">City/Country</th>
+                                                            <th scope="col">Location</th>
                                                             <th scope="col">Status</th>
                                                             <th scope="col">action</th>
                                                         </tr>
@@ -45,7 +52,14 @@
                                                                 <td>{{$rs->title}}</td>
                                                                 <td>{{$rs->keywords}}</td>
                                                                 <td>{{$rs->description}}</td>
-                                                                <td>{{$rs->image}}</td>
+                                                                <td>
+                                                                    @if($rs->image)
+                                                                        <img src="{{Storage::url($rs->image) }}" height="70" width="70" alt="">
+                                                                    @endif
+                                                                </td>
+                                                                <td>{{$rs->detail}}</td>
+                                                                <td>{{$rs->city}} / {{$rs->country}}</td>
+                                                                <td>{{$rs->location}}</td>
                                                                 <td>{{$rs->status}}</td>
                                                                 <td>
                                                                     <ul class="d-flex justify-content-center">

@@ -22,6 +22,9 @@
     <link rel="stylesheet" href="{{asset('assets')}}/admin/assets/css/responsive.css">
     <!-- modernizr css -->
     <script src="{{asset('assets')}}/admin/assets/js/vendor/modernizr-2.8.3.min.js"></script>
+
+    <script src="https://cdn.ckeditor.com/4.17.1/standard/ckeditor.js"></script>
+
 </head>
 
 <body>
@@ -62,6 +65,8 @@
 <!-- others plugins -->
 <script src="{{asset('assets')}}/admin/assets/js/plugins.js"></script>
 <script src="{{asset('assets')}}/admin/assets/js/scripts.js"></script>
+
+
 </body>
 
 
