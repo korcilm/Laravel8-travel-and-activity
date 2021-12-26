@@ -1,3 +1,7 @@
+@php
+    $parentCategories=\App\Http\Controllers\HomeController::categoryList()
+@endphp
+
 <!-- header-start -->
 <header>
     <div class="header-area ">
@@ -15,23 +19,21 @@
                         <div class="col-xl-6 col-lg-6">
                             <div class="main-menu  d-none d-lg-block">
                                 <nav>
-                                    <ul id="navigation">
-                                        <li><a class="active" href="index.html">home</a></li>
-                                        <li><a href="about.html">About</a></li>
-                                        <li><a class="" href="travel_destination.html">Destination</a></l/li>
-                                        <li><a href="#">pages <i class="ti-angle-down"></i></a>
+                                    <ul id="navigation" class="w-100">
+                                        <li><a href="blog.html">Anasayfa</a>
+                                        <li><a class="active" >Kategoriler</a>
                                             <ul class="submenu">
-                                                <li><a href="destination_details.html">Destinations details</a></li>
-                                                <li><a href="elements.html">elements</a></li>
+                                                @foreach($parentCategories as $rs)
+                                                    <li>
+                                                        <a class="active" >{{$rs->title}} <i class="fa fa-angle-double-down float-right" style="font-size: 10pt;"></i></a>
+                                                        @if(count($rs->children))
+                                                            @include('home.categorytree',['children'=>$rs->children])
+                                                        @endif
+                                                    </li>
+                                                @endforeach
                                             </ul>
                                         </li>
-                                        <li><a href="#">blog <i class="ti-angle-down"></i></a>
-                                            <ul class="submenu">
-                                                <li><a href="blog.html">blog</a></li>
-                                                <li><a href="single-blog.html">single-blog</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="contact.html">Contact</a></li>
+                                        <li><a href="blog.html">İletişim</a>
                                     </ul>
                                 </nav>
                             </div>

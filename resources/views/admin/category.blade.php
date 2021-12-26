@@ -41,7 +41,7 @@
                                                         @foreach($datalist as $rs)
                                                             <tr>
                                                                 <th scope="row">{{$rs->id}}</th>
-                                                                <td>{{$rs->parent_id}}</td>
+                                                                <td>{{\App\Http\Controllers\Admin\CategoryController::getParentsTree($rs,$rs->title)}}</td>
                                                                 <td>{{$rs->title}}</td>
                                                                 <td>{{$rs->keywords}}</td>
                                                                 <td>{{$rs->description}}</td>

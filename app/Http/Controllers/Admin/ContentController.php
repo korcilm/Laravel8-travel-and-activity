@@ -33,7 +33,7 @@ class ContentController extends Controller
     public function add()
     {
         //
-        $dataList=Category::all();
+        $dataList=Category::with('children')->get();
         return view('admin.content_add',['datalist'=>$dataList]);
     }
     /**
@@ -93,7 +93,7 @@ class ContentController extends Controller
     {
         //
         $data=Content::find($id);
-        $dataList=Category::all();
+        $dataList=Category::with('children')->get();
         return view('admin.content_edit',['data'=>$data],['datalist'=>$dataList]);
     }
 
@@ -112,7 +112,6 @@ class ContentController extends Controller
         $data->title=$request->input('title');
         $data->keywords=$request->input('keywords');
         $data->description=$request->input('description');
-        $data->image=Storage::putFile('images',$request->file('image'));
         $data->city=$request->input('city');
         $data->country=$request->input('country');
         $data->location=$request->input('location');
@@ -120,6 +119,9 @@ class ContentController extends Controller
         $data->user_id=Auth::id();
         $data->category_id=$request->input('category_id');
         $data->status=$request->input('status');
+        if ($request->file('image')!=null){
+            $data->image=Storage::putFile('images',$request->file('image'));
+        }
         $data->save();
         return redirect()->route('admin_content');
     }

@@ -50,7 +50,7 @@
                                         <label >Image</label>
                                         <input type="file" class="form-control" name="image" >
                                     </div>
-                                    <button type="submit" class="btn btn-primary btn-block mt-4 pr-4 pl-4">Add Content</button>
+                                    <button type="submit" class="btn btn-primary btn-block mt-4 pr-4 pl-4">Add Image</button>
                                 </form>
                             </div>
                         </div>

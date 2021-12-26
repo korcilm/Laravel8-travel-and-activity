@@ -13,7 +13,7 @@
                     <div class="col-12 mt-5">
                         <div class="card">
                             <div class="card-body mx-auto col-8">
-                                <h4 class="header-title text-center">Add Category</h4>
+                                <h4 class="header-title text-center">Edit Category</h4>
                                 <form method="post" action="{{route('admin_category_update',['id'=>$data->id])}}">
                                     @csrf
                                     <div class="form-group">
@@ -21,7 +21,9 @@
                                         <select class="form-control" name="parent_id">
                                             <option  value="0" >Main Category</option>
                                             @foreach($datalist as $rs)
-                                                <option value="{{$rs->id}}"  @if($rs->id==$data->parent_id) selected="selected" @endif  >{{$rs->title}}</option>
+                                                <option value="{{$rs->id}}"  @if($rs->id==$data->parent_id) selected="selected" @endif>
+                                                    {{\App\Http\Controllers\Admin\CategoryController::getParentsTree($rs,$rs->title)}}
+                                                </option>
                                             @endforeach
                                         </select>
                                     </div>

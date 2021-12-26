@@ -1041,9 +1041,9 @@ h3 {
 .header-area .main-header-area .main-menu ul li .submenu {
   position: absolute;
   left: 0;
-  top: 160%;
+  top: 0;
   background: #fff;
-  width: 200px;
+  width: 180px;
   z-index: 2;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.02);
   opacity: 0;

@@ -5,9 +5,9 @@
             <!-- nav and search button -->
             <div class="col-md-6 col-sm-8 clearfix">
                 <div class="nav-btn pull-left">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                    <span class="bold"></span>
+                    <span class="bold"></span>
+                    <span class="bold"></span>
                 </div>
                 <div class="search-box pull-left">
                     <form action="#">

@@ -23,7 +23,7 @@ use Illuminate\Support\Facades\Storage;
                                         <div class="card-body">
                                             <div class="row">
                                                 <div class="col-md-8"><h4 class="header-title">Content List</h4></div>
-                                                <div class="col-md-4 text-right"><a href="{{route('admin_content_add')}}" class="btn btn-outline-primary mb-2 ">Add Category</a></div>
+                                                <div class="col-md-4 text-right"><a href="{{route('admin_content_add')}}" class="btn btn-outline-primary mb-2 ">Add Content</a></div>
 
                                             </div>
                                             <div class="single-table">
@@ -32,6 +32,7 @@ use Illuminate\Support\Facades\Storage;
                                                         <thead class="text-uppercase">
                                                         <tr>
                                                             <th scope="col">ID</th>
+                                                            <th scope="col">Category</th>
                                                             <th scope="col">Type</th>
                                                             <th scope="col">Title</th>
                                                             <th scope="col">Keywords</th>
@@ -49,6 +50,7 @@ use Illuminate\Support\Facades\Storage;
                                                         @foreach($datalist as $rs)
                                                             <tr>
                                                                 <th scope="row">{{$rs->id}}</th>
+                                                                <td>{{\App\Http\Controllers\Admin\CategoryController::getParentsTree($rs->category,$rs->category->title)}}</td>
                                                                 <td>{{$rs->type}}</td>
                                                                 <td>{{$rs->title}}</td>
                                                                 <td>{{$rs->keywords}}</td>
