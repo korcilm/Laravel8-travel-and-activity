@@ -1,8 +1,11 @@
 @extends('layouts.home')
-@section('title','Laravel Gezi Aktivite Sitesi')
+@section('title',$setting->title)
 @section('description')
-    Türkiye'nin en iyi aktivite sitesi
+    {{$setting->description}}
 @endsection
-@section('keywords','Kocaeli, Gezi, Aktivite,İstanbul')
+@section('keywords',$setting->keywords)
 @section('content')
+    @include('home._slider')
+    @include('home._whereToGoArea')
+    @include('home._popularPlaceArea')
 @endsection
