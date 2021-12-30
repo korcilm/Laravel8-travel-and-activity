@@ -11,6 +11,7 @@
                 <ul class="metismenu" id="menu">
                     <li><a href="{{route('admin_category')}}"><i class="ti-menu"></i> <span>Category</span></a></li>
                     <li><a href="{{route('admin_content')}}"><i class="ti-map-alt"></i> <span>Content</span></a></li>
+                    <li><a href="{{route('admin_message')}}"><i class="ti-comment-alt"></i> <span>Contact Message</span></a></li>
                     <li><a href="{{route('admin_setting')}}"><i class="ti-settings"></i> <span>Setting</span></a></li>
                 </ul>
             </nav>
