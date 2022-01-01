@@ -22,6 +22,8 @@ Route::get('/contact',[HomeController::class,'contact'])->name('home_contact');
 Route::get('/reference',[HomeController::class,'reference'])->name('home_reference');
 Route::get('/place',[HomeController::class,'place'])->name('home_place');
 Route::post('/sendmessage',[HomeController::class,'sendmessage'])->name('home_sendmessage');
+Route::get('/place/{id}',[HomeController::class,'placeDetail'])->name('home_placeDetail');
+Route::get('/categoryplaces/{id}',[HomeController::class,'categoryplaces'])->name('home_categoryplaces');
 Route::get('/admin',[App\Http\Controllers\Admin\HomeController::class,'index']);
 
 

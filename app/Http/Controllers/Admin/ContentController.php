@@ -55,6 +55,7 @@ class ContentController extends Controller
             'country'=>$request->input('country'),
             'location'=>$request->input('location'),
             'detail'=>$request->input('detail'),
+            'category_id'=>$request->input('category_id'),
             'user_id'=>Auth::id(),
             'status'=>$request->input('status'),
         ]);
