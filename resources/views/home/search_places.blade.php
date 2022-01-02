@@ -1,68 +1,72 @@
 @extends('layouts.home')
-@section('title',$data->title)
-@section('description')
-    {{$data->description}}
-@endsection
-@section('keywords',$data->keywords)
+@section('title',$search.' listesi' )
+
 @section('content')
 
-    <!-- slider_area_start -->
-    <div class="slider_area">
-        <div class="slider_active owl-carousel">
-            @foreach($dataList as $rs)
-                <div class="single_slider  d-flex align-items-center overlay" style="background-image: url('{{Storage::url($rs->image)}}');">
-                    <div class="container">
-                        <div class="row align-items-center">
-                            <div class="col-xl-12 col-md-12">
-                                <div class="slider_text text-center">
-                                    <h3>{{$data->title}}</h3>
-                                    <p>{{$data->city}}</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            @endforeach
-        </div>
 
-    </div>
-    <!-- slider_area_end -->
-
-    <section class="blog_area single-post-area section-padding">
+    <!-- bradcam_area  -->
+    <div class="bradcam_area bradcam_bg_4">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8 posts-list">
-                    <div class="single-post">
-                        <div class="blog_details">
-                            {!! $data->detail !!}
-                        </div>
+                <div class="col-xl-12">
+                    <div class="bradcam_text text-center">
+                        <h3></h3>
+                        <h3></h3>
                     </div>
-                    <div class="navigation-top">
-                        <div class="d-sm-flex justify-content-between text-center">
-                            <p class="like-info"><span class="align-middle"><i class="fa fa-heart"></i></span> Lily and 4
-                                people like this</p>
-                            <div class="col-sm-4 text-center my-2 my-sm-0">
-                                <!-- <p class="comment-count"><span class="align-middle"><i class="fa fa-comment"></i></span> 06 Comments</p> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/ bradcam_area  -->
+    <!--================Blog Area =================-->
+    <section class="blog_area section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mb-5 mb-lg-0">
+                    <div class="blog_left_sidebar">
+                        @foreach($datalist as $rs)
+                        <article class="blog_item">
+                            <div class="blog_item_img">
+                                <img class="card-img rounded-0" src="{{Storage::url($rs->image)}}" alt="">
+                                <a href="#" class="blog_item_date">
+                                    <h3>15</h3>
+                                    <p>Jan</p>
+                                </a>
                             </div>
-                            <ul class="social-icons">
-                                <li><a href="#"><i class="fa fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                                <li><a href="#"><i class="fa fa-behance"></i></a></li>
+
+                            <div class="blog_details">
+                                <a class="d-inline-block" href="{{route('home_placeDetail',['id'=>$rs->id])}}">
+                                    <h2>{{$rs->title}}</h2>
+                                </a>
+                                <p>{{$rs->description}}</p>
+                                <ul class="blog-info-link">
+                                    <li><a href="#"><i class="fa fa-user"></i> {{$rs->title}}</a></li>
+                                    <li><a href="#"><i class="fa fa-comments"></i> 03 Comments</a></li>
+                                </ul>
+                            </div>
+                        </article>
+                        @endforeach
+
+                        <nav class="blog-pagination justify-content-center d-flex">
+                            <ul class="pagination">
+                                <li class="page-item">
+                                    <a href="#" class="page-link" aria-label="Previous">
+                                        <i class="ti-angle-left"></i>
+                                    </a>
+                                </li>
+                                <li class="page-item">
+                                    <a href="#" class="page-link">1</a>
+                                </li>
+                                <li class="page-item active">
+                                    <a href="#" class="page-link">2</a>
+                                </li>
+                                <li class="page-item">
+                                    <a href="#" class="page-link" aria-label="Next">
+                                        <i class="ti-angle-right"></i>
+                                    </a>
+                                </li>
                             </ul>
-                        </div>
-
-                    </div>
-
-                    <div class="comments-area">
-
-                        <h4> Yorum</h4>
-
-                    </div>
-                    <div class="comment-form">
-                        <h4>Leave a Reply</h4>
-                        @livewire('comment',['id'=>$data->id])
-
+                        </nav>
                     </div>
                 </div>
                 <div class="col-lg-4">
@@ -72,7 +76,8 @@
                                 <div class="form-group">
                                     <div class="input-group mb-3">
                                         <input type="text" class="form-control" placeholder='Search Keyword'
-                                               onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search Keyword'">
+                                               onfocus="this.placeholder = ''"
+                                               onblur="this.placeholder = 'Search Keyword'">
                                         <div class="input-group-append">
                                             <button class="btn" type="button"><i class="ti-search"></i></button>
                                         </div>
@@ -82,6 +87,7 @@
                                         type="submit">Search</button>
                             </form>
                         </aside>
+
                         <aside class="single_sidebar_widget post_category_widget">
                             <h4 class="widget_title">Category</h4>
                             <ul class="list cat-list">
@@ -112,17 +118,18 @@
                                 <li>
                                     <a href="#" class="d-flex">
                                         <p>Inspiration</p>
-                                        <p>(21)</p>
+                                        <p>21</p>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#" class="d-flex">
-                                        <p>Health Care</p>
-                                        <p>(21)</p>
+                                        <p>Health Care (21)</p>
+                                        <p>09</p>
                                     </a>
                                 </li>
                             </ul>
                         </aside>
+
                         <aside class="single_sidebar_widget popular_post_widget">
                             <h3 class="widget_title">Recent Post</h3>
                             <div class="media post_item">
@@ -191,6 +198,8 @@
                                 </li>
                             </ul>
                         </aside>
+
+
                         <aside class="single_sidebar_widget instagram_feeds">
                             <h4 class="widget_title">Instagram Feeds</h4>
                             <ul class="instagram_row flex-wrap">
@@ -226,8 +235,11 @@
                                 </li>
                             </ul>
                         </aside>
+
+
                         <aside class="single_sidebar_widget newsletter_widget">
                             <h4 class="widget_title">Newsletter</h4>
+
                             <form action="#">
                                 <div class="form-group">
                                     <input type="email" class="form-control" onfocus="this.placeholder = ''"
@@ -242,4 +254,5 @@
             </div>
         </div>
     </section>
+    <!--================Blog Area =================-->
 @endsection

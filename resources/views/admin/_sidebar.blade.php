@@ -13,6 +13,7 @@
                     <li><a href="{{route('admin_content')}}"><i class="ti-map-alt"></i> <span>Content</span></a></li>
                     <li><a href="{{route('admin_message')}}"><i class="ti-comment-alt"></i> <span>Contact Message</span></a></li>
                     <li><a href="{{route('admin_setting')}}"><i class="ti-settings"></i> <span>Setting</span></a></li>
+                    <li><a href="{{route('admin_comment')}}"><i class="ti-settings"></i> <span>Comments</span></a></li>
                 </ul>
             </nav>
         </div>

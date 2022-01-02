@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\CommentController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,11 +21,15 @@ Route::get('/',[HomeController::class,'index'])->name('home');
 Route::get('/aboutus',[HomeController::class,'aboutus'])->name('home_aboutus');
 Route::get('/contact',[HomeController::class,'contact'])->name('home_contact');
 Route::get('/reference',[HomeController::class,'reference'])->name('home_reference');
-Route::get('/place',[HomeController::class,'place'])->name('home_place');
 Route::post('/sendmessage',[HomeController::class,'sendmessage'])->name('home_sendmessage');
-Route::get('/place/{id}',[HomeController::class,'placeDetail'])->name('home_placeDetail');
+
 Route::get('/categoryplaces/{id}',[HomeController::class,'categoryplaces'])->name('home_categoryplaces');
 Route::get('/admin',[App\Http\Controllers\Admin\HomeController::class,'index']);
+Route::get('/placedetail/{id}',[HomeController::class,'placeDetail'])->name('home_placeDetail');
+
+Route::get('/place/{id}',[HomeController::class,'place'])->name('place');
+Route::post('/getplace',[HomeController::class,'getplace'])->name('getplace');
+Route::get('/getplacelist/{search}',[HomeController::class,'getplacelist'])->name('getplacelist');
 
 
 Route::middleware('auth')->prefix('admin')->group(function(){
@@ -67,6 +72,13 @@ Route::middleware('auth')->prefix('admin')->group(function(){
         Route::get('show',[\App\Http\Controllers\Admin\ImageController::class,'show'])->name('admin_image_show');
     });
 
+    #Comment
+    Route::prefix('comment')->group(function (){
+        Route::get('/',[CommentController::class,'index'])->name('admin_comment');
+        Route::post('update/{id}',[CommentController::class,'update'])->name('admin_comment_update');
+        Route::get('delete/{id}',[CommentController::class,'destroy'])->name('admin_comment_delete');
+        Route::get('show/{id}',[CommentController::class,'show'])->name('admin_comment_show');
+    });
     #Setting
     Route::get('setting',[\App\Http\Controllers\Admin\SettingController::class,'index'])->name('admin_setting');
     Route::post('setting/update',[\App\Http\Controllers\Admin\SettingController::class,'update'])->name('admin_setting_update');
@@ -75,6 +87,8 @@ Route::middleware('auth')->prefix('admin')->group(function(){
 
 Route::middleware('auth')->prefix('myaccount')->namespace('myaccount')->group(function(){
     Route::get('/',[\App\Http\Controllers\UserController::class,'index'])->name('myprofile');
+    Route::get('/mycomments',[\App\Http\Controllers\UserController::class,'mycomments'])->name('mycomments');
+    Route::get('/destroymycomment/{id}',[CommentController::class,'destroymycomments'])->name('user_comment_delete');
 });
 Route::middleware('auth')->prefix('user')->namespace('user')->group(function(){
     Route::get('/profile',[\App\Http\Controllers\UserController::class,'index'])->name('profile.show');
