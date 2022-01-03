@@ -26,7 +26,7 @@ class HomeController extends Controller
     }
     public static function countcomment($id)
     {
-        return Comment::where('content_id',$id)->count;
+        return Comment::where('content_id',$id)->count();
     }
 
     public function index()
@@ -95,7 +95,8 @@ class HomeController extends Controller
     {
         $data = Content::find($id);
         $dataList = Image::where('content_id', $id)->get();
-        return view('home.place_detail', ['data' => $data, 'dataList' => $dataList]);
+        $comments = Comment::where('content_id', $id)->get();
+        return view('home.place_detail', ['data' => $data, 'dataList' => $dataList, 'comments' => $comments]);
     }
 
     public function categoryplaces($id)

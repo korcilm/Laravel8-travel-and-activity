@@ -15,7 +15,7 @@
                         <div class="row align-items-center">
                             <div class="col-xl-12 col-md-12">
                                 <div class="slider_text text-center">
-                                    <h3>{{$data->title}}</h3>
+                                    <h3 style="line-height: 85%">{{$data->title}}</h3>
                                     <p>{{$data->city}}</p>
                                 </div>
                             </div>
@@ -35,6 +35,7 @@
                     <div class="single-post">
                         <div class="blog_details">
                             {!! $data->detail !!}
+
                         </div>
                     </div>
                     <div class="navigation-top">
@@ -53,14 +54,48 @@
                         </div>
 
                     </div>
-
                     <div class="comments-area">
+                        @php
+                            $countcomment = \App\Http\Controllers\HomeController::countcomment($data->id);
+                        @endphp
+                        <h4>{{$countcomment}} Comments</h4>
+                        @foreach($comments as $rs)
+                        <div class="comment-list">
+                            <div class="single-comment justify-content-between d-flex">
+                                <div class="user justify-content-between d-flex">
+                                    <div class="thumb">
+                                        <img src="{{asset('assets')}}/img/comment/comment_1.png" alt="">
+                                    </div>
+                                    <div class="desc">
+                                        <p class="comment">
+                                            {{$rs->comment}}
+                                        </p>
+                                        <div>
+                                            <i class="fa fa-star @if($rs->rate<1) -☆ empty @endif"></i>
+                                            <i class="fa fa-star @if($rs->rate<2) -☆ empty @endif"></i>
+                                            <i class="fa fa-star @if($rs->rate<3) -☆ empty @endif"></i>
+                                            <i class="fa fa-star @if($rs->rate<4) -☆ empty @endif"></i>
+                                            <i class="fa fa-star @if($rs->rate<5) -☆ empty @endif"></i>
+                                        </div>
+                                        <div class="d-flex justify-content-between">
+                                            <div class="d-flex align-items-center">
+                                                <h5>
+                                                    <a href="#">{{$rs->user->name}}</a>
+                                                </h5>
+                                                <p class="date">{{$rs->created_at}}</p>
+                                            </div>
 
-                        <h4> Yorum</h4>
-
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
                     </div>
+
                     <div class="comment-form">
                         <h4>Leave a Reply</h4>
+                        @livewireScripts
                         @livewire('comment',['id'=>$data->id])
 
                     </div>

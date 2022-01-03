@@ -17,6 +17,13 @@ class Comment extends Component
     {
         return view('livewire.comment');
     }
+    public function resetInput()
+    {
+        $this->comment = null;
+        $this->rate = null;
+        $this->content_id = null;
+        $this->IP = null;
+    }
     public function store()
     {
         $this->validate([

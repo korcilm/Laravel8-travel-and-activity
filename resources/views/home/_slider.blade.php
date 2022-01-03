@@ -7,7 +7,7 @@
                 <div class="row align-items-center">
                     <div class="col-xl-12 col-md-12">
                         <div class="slider_text text-center">
-                            <h3>{{$rs->title}}</h3>
+                            <h3 style="line-height: 85%">{{$rs->title}}</h3>
                             <p>{{$rs->city}}</p>
                             <a href="{{route('home_placeDetail',['id'=>$rs->id])}}" class="boxed-btn3">Şimdi Keşfet</a>
                         </div>

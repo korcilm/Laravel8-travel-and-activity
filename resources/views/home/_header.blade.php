@@ -22,11 +22,11 @@
                                 <nav>
                                     <ul id="navigation" class="w-100">
                                         <li><a href="{{route('home')}}">Anasayfa</a>
-                                        <li><a class="active" >Gezi ve Aktivite</a>
+                                        <li><a>Gezi ve Aktivite</a>
                                             <ul class="submenu">
                                                 @foreach($parentCategories as $rs)
                                                     <li>
-                                                        <a class="active" >{{$rs->title}} <i class="fa fa-angle-double-down float-right" style="font-size: 10pt;"></i></a>
+                                                        <a>{{$rs->title}} <i class="fa fa-angle-double-right float-right" style="font-size: 10pt;"></i></a>
                                                         @if(count($rs->children))
                                                             @include('home.categorytree',['children'=>$rs->children])
                                                         @endif
