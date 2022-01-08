@@ -20,7 +20,7 @@
             <div class="col-sm-6">
                 <div class="form-group">
                     @error('rate')<span class="text-danger">{{$message}}</span>@enderror
-                    <strong>Your Rating</strong>
+                    <strong>Senin oyun</strong>
                     <div class="rating">
                         <input type="radio" wire:model="rate"  value="5" id="5"><label style="font-size: 50pt;" for="5">☆</label>
                         <input type="radio" wire:model="rate" value="4" id="4"><label style="font-size: 50pt;"  for="4">☆</label>

@@ -17,7 +17,7 @@
                                 </a>
                             </div>
                         </div>
-                        <div class="col-xl-7 col-lg-7">
+                        <div class="col-xl-8 col-lg-8">
                             <div class="main-menu  d-none d-lg-block">
                                 <nav>
                                     <ul id="navigation" class="w-100">
@@ -57,7 +57,7 @@
                                 </nav>
                             </div>
                         </div>
-                        <div class="col-xl-3 col-lg-3 d-none d-lg-block">
+                        <div class="col-xl-2 col-lg-2 d-none d-lg-block">
                             <div class="social_wrap d-flex align-items-center justify-content-end">
                                 <div class="number">
                                     <p> <i class="fa fa-phone"></i> {{$setting->phone}}</p>
@@ -72,11 +72,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="seach_icon">
-                            <a data-toggle="modal" data-target="#exampleModalCenter" href="#">
-                                <i class="fa fa-search"></i>
-                            </a>
-                        </div>
+
                         <div class="col-12">
                             <div class="mobile_menu d-block d-lg-none"></div>
                         </div>

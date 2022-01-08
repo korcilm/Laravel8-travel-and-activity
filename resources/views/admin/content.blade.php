@@ -55,7 +55,7 @@ use Illuminate\Support\Facades\Storage;
                                                                 <td>{{$rs->title}}</td>
                                                                 <td>{{$rs->keywords}}</td>
                                                                 <td>{{$rs->description}}</td>
-                                                                <td>{{$rs->detail}}</td>
+                                                                <td>{{Str::limit($rs->detail, 50)}}</td>
                                                                 <td>{{$rs->city}} / {{$rs->country}}</td>
                                                                 <td>{{$rs->location}}</td>
                                                                 <td>
