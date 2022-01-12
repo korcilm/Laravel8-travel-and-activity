@@ -41,6 +41,7 @@
                                             <li class="float-right"> {{\Illuminate\Support\Facades\Auth::user()->name}}
                                                 <ul class="submenu">
                                                         <li><a href="{{route('myprofile')}}" >Profilim<i class="fa fa-user-circle float-right" style="font-size: 10pt;"></i></a></li>                                                       </li>
+                                                        <li><a href="{{route('mycomments')}}" >Yorumlarım<i class="fa fa-comment float-right" style="font-size: 10pt;"></i></a></li>                                                       </li>
                                                         <li><a href="{{route('logout')}}" >Çıkış Yap<i class="fa fa-sign-out float-right" style="font-size: 10pt;"></i></a></li>                                                       </li>
                                                 </ul>
                                             </li>

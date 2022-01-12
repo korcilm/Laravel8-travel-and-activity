@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Comment;
 use App\Models\Content;
+use App\Models\Faq;
 use App\Models\Image;
 use App\Models\Message;
 use App\Models\Setting;
@@ -56,6 +57,11 @@ class HomeController extends Controller
     {
         $setting = Setting::first();
         return view('home.aboutus', ['setting' => $setting]);
+    }
+    public function faq()
+    {
+        $datalist = Faq::all()->get();
+        return view('home.faq', ['datalist' => $datalist]);
     }
 
     public function contact()

@@ -21,7 +21,7 @@ class UserController extends Controller
     public function mycomments()
     {
         $datalist=Comment::where('user_id','=',Auth::user()->id)->get();
-        return view('home.user_comments',['datalist'=>$datalist]);
+        return view('home.user_comment',['datalist'=>$datalist]);
     }
     public function destroycomment(Comment $comment,$id)
     {
