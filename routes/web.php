@@ -22,7 +22,7 @@ Route::get('/aboutus',[HomeController::class,'aboutus'])->name('home_aboutus');
 Route::get('/contact',[HomeController::class,'contact'])->name('home_contact');
 Route::get('/reference',[HomeController::class,'reference'])->name('home_reference');
 Route::post('/sendmessage',[HomeController::class,'sendmessage'])->name('home_sendmessage');
-Route::post('/faq',[HomeController::class,'faq'])->name('home_faq');
+Route::get('/faq',[HomeController::class,'faq'])->name('home_faq');
 
 Route::get('/categoryplaces/{id}',[HomeController::class,'categoryplaces'])->name('home_categoryplaces');
 Route::get('/admin',[App\Http\Controllers\Admin\HomeController::class,'index']);

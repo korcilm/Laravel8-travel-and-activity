@@ -37,6 +37,7 @@
                                         <li><a href="{{route('home_aboutus')}}">Hakkımızda</a></li>
                                         <li><a href="{{route('home_reference')}}">Referanslar</a></li>
                                         <li><a href="{{route('home_contact')}}">İletişim</a></li>
+                                        <li><a href="{{route('home_faq')}}">SSS</a></li>
                                         @auth
                                             <li class="float-right"> {{\Illuminate\Support\Facades\Auth::user()->name}}
                                                 <ul class="submenu">

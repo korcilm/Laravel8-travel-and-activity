@@ -60,8 +60,9 @@ class HomeController extends Controller
     }
     public function faq()
     {
-        $datalist = Faq::all()->get();
-        return view('home.faq', ['datalist' => $datalist]);
+        $setting = Setting::first();
+        $datalist = Faq::all();
+        return view('home.faq', ['datalist' => $datalist, 'setting' => $setting]);
     }
 
     public function contact()

@@ -29,12 +29,13 @@
 
     <link rel="stylesheet" href="{{asset('assets')}}/css/style.css">
     <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+    @yield('pagecss')
 </head>
 
 <body>
 @include('home._header')
 @yield('content')
 @include('home._footer')
-
+@yield('pagescript')
 </body>
 </html>
