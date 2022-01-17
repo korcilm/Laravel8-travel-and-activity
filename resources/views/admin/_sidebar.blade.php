@@ -15,6 +15,8 @@
                     <li><a href="{{route('admin_setting')}}"><i class="ti-settings"></i> <span>Setting</span></a></li>
                     <li><a href="{{route('admin_comment')}}"><i class="ti-settings"></i> <span>Comments</span></a></li>
                     <li><a href="{{route('admin_faq')}}"><i class="fa fa-question-circle"></i> <span>Faq</span></a></li>
+                    <li><a href="{{route('admin_users')}}"><i class="fa fa-users"></i> <span>Users</span></a></li>
+                    <li><a href="{{ route('logout') }}"><i class="fa fa-sign-out"></i> <span>Log Out</span></a></li>
                 </ul>
             </nav>
         </div>

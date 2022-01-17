@@ -1,3 +1,4 @@
+@auth
 <div class="col-md-2">
     <div class="card bg-light">
         <a href="/"
@@ -30,6 +31,17 @@
                     Katıldığım Etkinlikler
                 </a>
             </li>
+            @php
+                $userRoles=Auth::user()->roles->pluck('name');
+            @endphp
+            @if($userRoles->contains('admin'))
+                <li class="list-group-item ">
+                    <a href="{{route('admin_home')}}" class="link-dark" target="_blank">
+                        <i class="fa fa-cog mr-2"></i>
+                        Admin Panel
+                    </a>
+                </li>
+            @endif
             <li class="list-group-item ">
                 <a href="{{route('logout')}}" class="link-dark">
                     <i class="fa fa-sign-out mr-2"></i>
@@ -40,3 +52,4 @@
         </ul>
     </div>
 </div>
+@endauth

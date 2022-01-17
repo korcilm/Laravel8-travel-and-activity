@@ -5,7 +5,7 @@
             <div class="col-lg-6">
                 <div class="section_title text-center mb_70">
                     <h3>Popüler Gezi ve Aktiviteler</h3>
-                    <p>Suffered alteration in some form, by injected humour or good day randomised booth anim 8-bit hella wolf moon beard words.</p>
+                    <p>En çok ziyaret edilen yerlere ve en çok yapılan aktivitelere göz atın.</p>
                 </div>
             </div>
         </div>
@@ -17,8 +17,9 @@
                         <img src="{{Storage::url($rs->image)}}" width="362" height="270" alt="">
                     </div>
                     <div class="content">
-                        <p class="d-flex align-items-center">{{$rs->title}}   </p>
-
+                        <a  href="{{route('home_placeDetail',['id'=>$rs->id])}}">
+                            <h4 class="text-white">{{$rs->title}}</h4>
+                        </a>
                     </div>
                 </div>
             </div>

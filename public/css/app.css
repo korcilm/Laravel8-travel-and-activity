@@ -56,7 +56,12 @@ hr {
   color: inherit; /* 2 */
   border-top-width: 1px; /* 3 */
 }
-
+body > div.container.py-5 > div > div.col-md-10 > div > div.single-table > div > main > div > div > div.md\:grid.md\:grid-cols-3.md\:gap-6 > div.mt-5.md\:mt-0.md\:col-span-2 > form > div.px-4.py-5.bg-white.sm\:p-6.shadow.sm\:rounded-tl-md.sm\:rounded-tr-md{
+    height: 250px;
+}
+body > div.container.py-5 > div > div.col-md-10 > div > div.single-table > div > main > div > div > div:nth-child(3) > div > div.mt-5.md\:mt-0.md\:col-span-2 > form > div.px-4.py-5.bg-white.sm\:p-6.shadow.sm\:rounded-tl-md.sm\:rounded-tr-md{
+    height: 300px;
+}
 /*
 Add the correct text decoration in Chrome, Edge, and Safari.
 */
