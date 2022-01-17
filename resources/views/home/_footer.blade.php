@@ -10,20 +10,21 @@
                 <div class="col-xl-2 col-md-6 col-lg-2">
                     <div class="footer_widget">
                         <h3 class="footer_title">
-                            Company
+                            Menü
                         </h3>
                         <ul class="links">
-                            <li><a href="#">Pricing</a></li>
-                            <li><a href="#">About</a></li>
-                            <li><a href="#"> Gallery</a></li>
-                            <li><a href="#"> Contact</a></li>
+                            <li><a href="{{route('home')}}">Anasayfa</a>
+                            <li><a href="{{route('home_aboutus')}}">Hakkımızda</a></li>
+                            <li><a href="{{route('home_reference')}}">Referanslar</a></li>
+                            <li><a href="{{route('home_contact')}}">İletişim</a></li>
+                            <li><a href="{{route('home_faq')}}">SSS</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-xl-4 col-md-6 col-lg-4">
                     <div class="footer_widget">
                         <h3 class="footer_title">
-                            Popular destination
+                            Popüler Ülkeler
                         </h3>
                         <ul class="links double_links">
                             <li><a href="#">Turkey</a></li>

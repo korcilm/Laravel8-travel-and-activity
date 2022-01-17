@@ -15,7 +15,7 @@
                         <div class="row align-items-center">
                             <div class="col-xl-12 col-md-12">
                                 <div class="slider_text text-center">
-                                    <h3 style="line-height: 85%">{{$data->title}}</h3>
+                                    <h4 class="text-white" style="line-height: 85% ;font-size: 50pt;">{{$data->title}}</h4>
                                     <p>{{$data->city}}</p>
                                 </div>
                             </div>
