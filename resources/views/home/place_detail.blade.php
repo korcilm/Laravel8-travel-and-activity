@@ -26,9 +26,21 @@
         </div>
 
     </div>
-    <!-- slider_area_end -->
 
     <section class="blog_area single-post-area section-padding">
+        <!-- slider_area_end -->
+        <div class="container">@include('home.message')</div>
+        <div class=" p-3" style="background-color: #7a83cf!important">
+           <div class="container">
+               <form action="{{route('user_attend_create',['id'=>$data->id])}}" method="post">
+                   @csrf
+                   <p class=" text-white">
+                       {{$data->title}} etkinliğine katılmak için
+                       <button type="submit" class="btn btn-dark px-5  float-right" style="color: white !important; ">Katıl</button>
+                   </p>
+               </form>
+           </div>
+        </div>
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 posts-list">

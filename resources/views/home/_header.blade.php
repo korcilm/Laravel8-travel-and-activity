@@ -39,10 +39,12 @@
                                         <li><a href="{{route('home_contact')}}">İletişim</a></li>
                                         <li><a href="{{route('home_faq')}}">SSS</a></li>
                                         @auth
-                                            <li class="float-right"> {{\Illuminate\Support\Facades\Auth::user()->name}}
+                                            <li class="float-right"> {{\Illuminate\Support\Facades\Auth::user()->name}} {{Auth::user()->roles->pluck('name')}}
                                                 <ul class="submenu">
                                                         <li><a href="{{route('myprofile')}}" >Profilim<i class="fa fa-user-circle float-right" style="font-size: 10pt;"></i></a></li>                                                       </li>
                                                         <li><a href="{{route('mycomments')}}" >Yorumlarım<i class="fa fa-comment float-right" style="font-size: 10pt;"></i></a></li>                                                       </li>
+                                                        <li><a href="{{route('user_content')}}" >İçeriklerim<i class="fa fa-map-marker float-right" style="font-size: 10pt;"></i></a></li>                                                       </li>
+                                                        <li><a href="{{route('user_attend')}}" >Katıldığım Etkinlikler<i class="fa fa-check-square float-right" style="font-size: 10pt;"></i></a></li>                                                       </li>
                                                         <li><a href="{{route('logout')}}" >Çıkış Yap<i class="fa fa-sign-out float-right" style="font-size: 10pt;"></i></a></li>                                                       </li>
                                                 </ul>
                                             </li>

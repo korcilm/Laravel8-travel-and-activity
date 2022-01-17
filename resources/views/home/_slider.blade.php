@@ -2,7 +2,7 @@
 <div class="slider_area">
     <div class="slider_active owl-carousel">
         @foreach($slider as $rs)
-        <div class="single_slider  d-flex align-items-center overlay"  >
+        <div class="single_slider  d-flex align-items-center overlay" style="background-image: url('{{Storage::url($rs->image)}}');" >
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-xl-12 col-md-12">

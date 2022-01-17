@@ -34,8 +34,8 @@ class HomeController extends Controller
     {
         $setting = Setting::first();
         $slider = Content::select('id', 'title', 'image', 'city')->limit(4)->get();
-        $popularTourAndActivity = Content::select('id', 'title', 'image', 'city')->limit(5)->inRandomOrder()->get();
-        $lastTourAndActivity = Content::select('id', 'title', 'image', 'city', 'country')->orderByDesc('id')->get();
+        $popularTourAndActivity = Content::select('id', 'title', 'image', 'city')->limit(6)->inRandomOrder()->get();
+        $lastTourAndActivity = Content::select('id', 'title', 'image', 'city', 'country')->limit(6)->orderByDesc('id')->get();
 
         $data = [
             'setting' => $setting,

@@ -5142,7 +5142,7 @@ h6 {
 
 /* line 14, ../../Arafath/CL/December/231. Travel-02/HTML/scss/_blog.scss */
 .blog_area a:hover, .blog_area a :hover {
-  background: -webkit-linear-gradient(131deg, #FF4A52 0%, #FF4A52 99%);
+  background: -webkit-linear-gradient(131deg, #ffffff 0%, #ffffff 99%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-decoration: none;
